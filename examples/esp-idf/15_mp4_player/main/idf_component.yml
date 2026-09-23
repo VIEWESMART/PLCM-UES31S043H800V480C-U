@@ -1,0 +1,9 @@
+dependencies:
+  idf: ">=5.5.0"
+  viewesmart/bsp_ues31s043h800v480c_u: "^1.0.0"
+  espressif/esp_extractor:
+    version: "^1.0.4"
+    public: true
+  espressif/esp_audio_codec:
+    version: "*"
+    public: true
