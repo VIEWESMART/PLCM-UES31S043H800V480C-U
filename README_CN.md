@@ -248,6 +248,9 @@ RS485：DE/~RE 由 485_TX 经 S8050 自动切换。软件里按普通 UART 使�
 
 工程使用乐鑫组件仓库中的板级支持包 **[viewesmart/bsp_ues31s043h800v480c_u](https://components.espressif.com/components/viewesmart/bsp_ues31s043h800v480c_u)**（`^1.0.0`）。各示例的组件清单还声明了 `idf >= 5.5.0`。示例说明要求安装 ESP-IDF **master** 并加上 `--preview`，因为带版本号的稳定版不含 `esp32s31`。
 
+> [!Note]
+> Arduino IDE相关示例程序还在适配中
+
 ### 5.1 软件示例
 
 示例在 [`examples/esp-idf`](examples/esp-idf)。每个带编号的文件夹都是独立工程。总表：[examples/esp-idf/README_CN.md](examples/esp-idf/README_CN.md)。
