@@ -237,13 +237,18 @@ RS485：DE/~RE 由 485_TX 经 S8050 自动切换。软件里按普通 UART 使�
 
 ---
 
-## 4. 软件
+## 4. 尺寸图
+![尺寸图](images/Dimension_drawing.jpg)
+
+---
+
+## 5. 软件
 
 本仓库提供 **ESP-IDF** 示例。没有 Arduino 示例，也没有 PlatformIO 示例。
 
 工程使用乐鑫组件仓库中的板级支持包 **[viewesmart/bsp_ues31s043h800v480c_u](https://components.espressif.com/components/viewesmart/bsp_ues31s043h800v480c_u)**（`^1.0.0`）。各示例的组件清单还声明了 `idf >= 5.5.0`。示例说明要求安装 ESP-IDF **master** 并加上 `--preview`，因为带版本号的稳定版不含 `esp32s31`。
 
-### 4.1 软件示例
+### 5.1 软件示例
 
 示例在 [`examples/esp-idf`](examples/esp-idf)。每个带编号的文件夹都是独立工程。总表：[examples/esp-idf/README_CN.md](examples/esp-idf/README_CN.md)。
 
@@ -278,15 +283,15 @@ $env:SDKCONFIG_DEFAULTS = "sdkconfig.defaults;sdkconfig.defaults.esp32s31.classi
 
 接着编译 BLE 示例之前，把这个变量清掉。BLE（`10`、`11`）和经典蓝牙（`17`）不能做进同一份固件。
 
-### 4.2 入门
+### 5.2 入门
 
-#### 4.2.1 准备
+#### 5.2.1 准备
 
 * **硬件：** PLCM-UES31S043H800V480C-U，能传数据的 USB 线，接到 Type-C（CH340）。
 * **软件：** 用 [EIM](https://dl.espressif.com/dl/eim/index.html) 安装 ESP-IDF **master**。中国大陆请点该页的 **Download**。VS Code 和乐鑫 ESP-IDF 插件可以选装。示例说明写明不要用带版本号的稳定版来做这块板。
 * 每个示例 README 开头都有完整步骤，例如 [examples/esp-idf/01_display_touch/README_CN.md](examples/esp-idf/01_display_touch/README_CN.md)。
 
-#### 4.2.2 ESP-IDF 环境
+#### 5.2.2 ESP-IDF 环境
 
 1. **安装 ESP-IDF master**
    * 安装 EIM，然后安装 **master**。不要选带版本号的稳定版。
@@ -318,7 +323,7 @@ idf.py --preview -p COMx flash monitor
 
 ---
 
-## 5. 相关文档
+## 6. 相关文档
 
 - [产品规格书 V1.0（PDF）](datasheet/PLCM-UES31S043H800V480C-U%20V1.0%20SPEC.pdf)
 - [产品规格书 V1.0（DOC）](datasheet/PLCM-UES31S043H800V480C-U%20V1.0%20SPEC.doc)
@@ -333,7 +338,7 @@ idf.py --preview -p COMx flash monitor
 
 ---
 
-## 6. 常见问题
+## 7. 常见问题
 
 * Q. 看完上面的步骤，还是不会搭环境，怎么办？
 * A. 按 [examples/esp-idf/README_CN.md](examples/esp-idf/README_CN.md) 开头的安装说明做。也可以参考 [VIEWE-FAQ](https://github.com/VIEWESMART/VIEWE-FAQ)。
