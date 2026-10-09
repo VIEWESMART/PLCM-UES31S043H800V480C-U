@@ -3,8 +3,7 @@
 * **[中文版](./README_CN.md)**
 
 <p align="center">
-    <img src="images/Product_diagram0.png" alt="PLCM-UES31S043H800V480C-U front">
-    <img src="images/Product_diagram1.png" alt="PLCM-UES31S043H800V480C-U back">
+    <img src="images/Product_pic0.png" alt="PLCM-UES31S043H800V480C-U front">
 </p>
 
 ---
@@ -89,9 +88,8 @@ The product specification lists these application areas:
 
 ### 2.1 Interface Description
 
-![Interface layout](images/Interface_Layout.png)
+![Interface layout](images/Interface_Layout_en.jpg)
 
-![PCB layout](images/PCB_Layout.png)
 
 1. **Main control module:** ESP32-S31-WROOM-3. Dual-core RISC-V, up to 320 MHz, 16 MB Flash + 16 MB PSRAM, PCB antenna.
 2. **Display interface:** 40-pin RGB output. The panel is 24-bit capable; this board wires RGB666 (R2–R7 / G2–G7 / B2–B7). See the Display Interface table.
@@ -226,43 +224,8 @@ Two keys cannot be detected at once. The specification says the silkscreen order
 
 ![GPIO definition](images/GPIO_Definition.png)
 
-| GPIO | Current usage | Function |
-| --- | --- | --- |
-| CHIP-EN | Reset | RESET button (SW1) |
-| GPIO0 | I2C SDA | GT911 + ES8389. Pulled high at reset (normal boot). Not the BOOT key; also on H1 |
-| GPIO1 | I2C SCL | GT911 + ES8389; also on H1 |
-| GPIO2–7 | LCD-R2–R7 | LCD red data, high 6 bits |
-| GPIO8–13 | LCD-G2–G7 | LCD green data, high 6 bits |
-| GPIO14–19 | LCD-B2–B7 | LCD blue data, high 6 bits |
-| GPIO20–23 | SD-D0–D3 | SDMMC 4-bit data |
-| GPIO24 | SD-CLK | SDMMC clock |
-| GPIO25 | SD-CMD | SDMMC command |
-| USB_DP / USB_DM | USB 2.0 HS PHY | Dedicated module pins. Do not configure as GPIO |
-| GPIO33 | UART1 TX | Verified as UART1 TX. Also a USB Serial/JTAG pad |
-| GPIO34 | UART1 RX | Verified as UART1 RX |
-| GPIO35 | RS485 TX | SIT3088E DI; S8050 auto-drives DE/~RE; also on H1 |
-| GPIO36 | RS485 RX | SIT3088E RO; also on H1 |
-| GPIO37 | WS2812 DIN | On-board XL-5050RGBC-WS2812B |
-| GPIO38 | TP INT | Touch interrupt on the FPC. Verified examples leave it unused |
-| GPIO39 | LCD-BL-EN | Backlight enable, active high |
-| GPIO40 | LCD-PCLK | Pixel clock, 18 MHz, negative polarity |
-| GPIO42 | ADC KEY | SW3–SW6 resistor ladder, ADC1, about 0–2 V usable range |
-| GPIO43 | LCD-DE | Data enable |
-| GPIO44 | LCD-HS | Horizontal sync (GPIO number, not USB_DM) |
-| GPIO45 | LCD-VS | Vertical sync (GPIO number, not USB_DP) |
-| GPIO46 | BEEP-EN | Buzzer, active high; 3 kHz PWM recommended |
-| GPIO47 | PA-EN | NS4150B amplifier enable, active high |
-| GPIO48 | I2S MCLK | Present on the schematic; firmware examples leave NC (`no_mclk`) |
-| GPIO49 | I2S BCK | ES8389 bit clock |
-| GPIO50 | I2S WS | ES8389 word select / LRCK |
-| GPIO51 | I2S DOUT | MCU → ES8389 DAC |
-| GPIO52 | I2S DIN | ES8389 ADC → MCU |
-| GPIO53 | CAN TX | SIT1050T TXD |
-| GPIO54 | CAN RX | SIT1050T RXD |
-| GPIO55–57 | H1 GPIO | Broken out on H1 |
-| TX0 (IO58) / RX0 (IO59) | UART0 | CH340C download / log; also on H1 |
-| GPIO60 | SD-CTRL | SD 3.3 V power switch, active low |
-| GPIO61 | BOOT | BOOT button (SW2); also on H1 |
+> [!Note]
+> The green-marked **GPIO** pins are idle IOs and not occupied by any functions.
 
 ---
 
