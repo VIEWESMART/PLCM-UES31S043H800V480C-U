@@ -237,13 +237,21 @@ Two keys cannot be detected at once. The specification says the silkscreen order
 
 ---
 
-## 4. Software
+## 4. Dimension drawing
+![Size](images/Dimension_drawing.jpg)
+
+---
+
+## 5. Software
 
 This repository provides **ESP-IDF** examples. There is no Arduino example and no PlatformIO example.
 
 The projects use the board support package **[viewesmart/bsp_ues31s043h800v480c_u](https://components.espressif.com/components/viewesmart/bsp_ues31s043h800v480c_u)** (`^1.0.0`) from the Espressif Component Registry. Each example manifest also declares `idf >= 5.5.0`. The example guides say to install ESP-IDF **master** and to pass `--preview`, because numbered stable releases do not include `esp32s31`.
 
-### 4.1 Software Examples
+> [!Note]
+> The sample programs related to Arduino IDE are still being adapted.
+
+### 5.1 Software Examples
 
 Examples are in [`examples/esp-idf`](examples/esp-idf). Each numbered folder is its own project. Index: [examples/esp-idf/README.md](examples/esp-idf/README.md).
 
@@ -278,15 +286,15 @@ $env:SDKCONFIG_DEFAULTS = "sdkconfig.defaults;sdkconfig.defaults.esp32s31.classi
 
 Clear that variable before building a BLE example. BLE (`10`, `11`) and Classic Bluetooth (`17`) must not be combined in one firmware.
 
-### 4.2 Getting Started
+### 5.2 Getting Started
 
-#### 4.2.1 Preparation
+#### 5.2.1 Preparation
 
 * **Hardware:** PLCM-UES31S043H800V480C-U, a data-capable USB cable to the Type-C port (CH340).
 * **Software:** ESP-IDF **master**, installed with [EIM](https://dl.espressif.com/dl/eim/index.html). In mainland China use the **Download** button on that page. VS Code with the Espressif ESP-IDF extension is optional. The example guides say not to use a numbered stable release for this chip.
 * Full beginner steps are at the top of each example README, for example [examples/esp-idf/01_display_touch/README.md](examples/esp-idf/01_display_touch/README.md).
 
-#### 4.2.2 ESP-IDF Setup
+#### 5.2.2 ESP-IDF Setup
 
 1. **Install ESP-IDF master**
    * Install EIM, then install the **master** branch. Do not pick a numbered stable release.
@@ -318,7 +326,8 @@ If `esp32s31` is missing from the target list, the install is not master, or `--
 
 ---
 
-## 5. Related Documents
+
+## 6. Related Documents
 
 - [Product specification V1.0 (PDF)](datasheet/PLCM-UES31S043H800V480C-U%20V1.0%20SPEC.pdf)
 - [Product specification V1.0 (DOC)](datasheet/PLCM-UES31S043H800V480C-U%20V1.0%20SPEC.doc)
@@ -333,7 +342,7 @@ If `esp32s31` is missing from the target list, the install is not master, or `--
 
 ---
 
-## 6. FAQ
+## 7. FAQ
 
 * Q. After reading the above steps, I still don't know how to build a programming environment. What should I do?
 * A. Follow the install section at the top of [examples/esp-idf/README.md](examples/esp-idf/README.md). You can also refer to the [VIEWE-FAQ](https://github.com/VIEWESMART/VIEWE-FAQ) document.
