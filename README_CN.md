@@ -3,8 +3,7 @@
 * **[English](./README.md)**
 
 <p align="center">
-    <img src="images/Product_diagram0.png" alt="PLCM-UES31S043H800V480C-U 正面">
-    <img src="images/Product_diagram1.png" alt="PLCM-UES31S043H800V480C-U 背面">
+    <img src="images/Product_pic0.png" alt="PLCM-UES31S043H800V480C-U 正面">
 </p>
 
 ---
@@ -89,9 +88,8 @@ ESP32-S31-WROOM-3 的更多参数见 [相关文档](#5-相关文档) 中的模�
 
 ### 2.1 接口说明
 
-![接口布局](images/Interface_Layout.png)
+![接口布局](images/Interface_Layout_cn.jpg)
 
-![PCB 布局](images/PCB_Layout.png)
 
 1. **主控模组：** ESP32-S31-WROOM-3。RISC-V 双核，最高 320 MHz，16 MB Flash + 16 MB PSRAM，PCB 天线。
 2. **显示接口：** 40 针 RGB。屏体支持 24 位；本板实际连接 RGB666（R2–R7 / G2–G7 / B2–B7）。见下方显示接口表。
@@ -226,43 +224,8 @@ RS485：DE/~RE 由 485_TX 经 S8050 自动切换。软件里按普通 UART 使�
 
 ![GPIO 定义](images/GPIO_Definition.png)
 
-| GPIO | 当前用途 | 功能 |
-| --- | --- | --- |
-| CHIP-EN | 复位 | RESET 按键（SW1） |
-| GPIO0 | I2C SDA | GT911 + ES8389。复位时上拉（正常启动）。不是 BOOT 键；同时在 H1 |
-| GPIO1 | I2C SCL | GT911 + ES8389；同时在 H1 |
-| GPIO2–7 | LCD-R2–R7 | 液晶红色数据，高 6 位 |
-| GPIO8–13 | LCD-G2–G7 | 液晶绿色数据，高 6 位 |
-| GPIO14–19 | LCD-B2–B7 | 液晶蓝色数据，高 6 位 |
-| GPIO20–23 | SD-D0–D3 | SDMMC 4-bit 数据 |
-| GPIO24 | SD-CLK | SDMMC 时钟 |
-| GPIO25 | SD-CMD | SDMMC 命令 |
-| USB_DP / USB_DM | USB 2.0 HS PHY | 模组专用脚。不要配成 GPIO |
-| GPIO33 | UART1 TX | 已验证为 UART1 TX。同时是 USB Serial/JTAG 焊盘 |
-| GPIO34 | UART1 RX | 已验证为 UART1 RX |
-| GPIO35 | RS485 TX | SIT3088E DI；S8050 自动驱动 DE/~RE；同时在 H1 |
-| GPIO36 | RS485 RX | SIT3088E RO；同时在 H1 |
-| GPIO37 | WS2812 DIN | 板载 XL-5050RGBC-WS2812B |
-| GPIO38 | TP INT | FPC 触摸中断。已验证示例未使用 |
-| GPIO39 | LCD-BL-EN | 背光使能，高电平有效 |
-| GPIO40 | LCD-PCLK | 像素时钟，18 MHz，负极性 |
-| GPIO42 | ADC KEY | SW3–SW6 电阻分压，ADC1，可用范围约 0–2 V |
-| GPIO43 | LCD-DE | 数据使能 |
-| GPIO44 | LCD-HS | 行同步（是 GPIO 号，不是 USB_DM） |
-| GPIO45 | LCD-VS | 场同步（是 GPIO 号，不是 USB_DP） |
-| GPIO46 | BEEP-EN | 蜂鸣器，高电平有效；建议 3 kHz PWM |
-| GPIO47 | PA-EN | NS4150B 功放使能，高电平有效 |
-| GPIO48 | I2S MCLK | 原理图上有；示例固件留空（`no_mclk`） |
-| GPIO49 | I2S BCK | ES8389 位时钟 |
-| GPIO50 | I2S WS | ES8389 字选择 / LRCK |
-| GPIO51 | I2S DOUT | MCU → ES8389 DAC |
-| GPIO52 | I2S DIN | ES8389 ADC → MCU |
-| GPIO53 | CAN TX | SIT1050T TXD |
-| GPIO54 | CAN RX | SIT1050T RXD |
-| GPIO55–57 | H1 GPIO | 引出到 H1 |
-| TX0 (IO58) / RX0 (IO59) | UART0 | CH340C 下载 / 日志；同时在 H1 |
-| GPIO60 | SD-CTRL | SD 3.3 V 电源开关，低电平有效 |
-| GPIO61 | BOOT | BOOT 按键（SW2）；同时在 H1 |
+> [!Note]
+> 绿色标记的**GPIO**引脚为空闲输入输出引脚，没有被任何功能占用。
 
 ---
 
