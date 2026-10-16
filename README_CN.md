@@ -10,7 +10,7 @@
 
 ## 1. 简介
 
-PLCM-UES31S043H800V480C-U 是 VIEWE 设计的高性能智能显示模组。主控为乐鑫 ESP32-S31-WROOM-3，屏幕为 4.3 英寸 RGB 电容触摸屏（800 × 480）。液晶与触摸器件与 UEDX80480043E-WB-B 相同（驱动 IC 为 ST7262，触摸 IC 为 GT911）。主板按 ESP32-S31 重新设计：32 位 RISC-V 双核，主频最高 320 MHz，带 Wi-Fi 6、蓝牙 5.4（LE）与经典蓝牙、USB 2.0 High-Speed OTG、立体声音频、SDIO 3.0 存储，以及 RS485 / CAN 工业接口。
+PLCM-UES31S043H800V480C-U 是 VIEWE 设计的高性能智能显示模组。主控为乐鑫 ESP32-S31-WROOM-3，屏幕为 4.3 英寸 RGB 电容触摸屏（800 × 480）。液晶与触摸器件与 UEDX80480043E-WB-B 相同（驱动 IC 为 ST7262，触摸 IC 为 GT911）。主板按 ESP32-S31 重新设计：32 位 RISC-V 双核，主频最高 320 MHz，带 Wi-Fi 6、蓝牙 5.4（LE）与经典蓝牙、USB 2.0 High-Speed OTG、立体声音频、SDIO 3.0 存储，以及 RS485 / CAN 工业接口。支持USB 5V供电或DCIN 7-24V宽压供电（通过跳线帽选择）。
 
 > [!NOTE]
 > ESP32-S31 目前是预览芯片。ESP-IDF 编译必须带 `--preview`（例如 `idf.py --preview set-target esp32s31`）。模组额定参数以乐鑫 ESP32-S31-WROOM-3 数据手册（预发布）为准。本仓库示例说明写明：5.4、5.5 等稳定版不含这颗芯片，需要安装 ESP-IDF **master**。
@@ -34,7 +34,7 @@ PLCM-UES31S043H800V480C-U 是 VIEWE 设计的高性能智能显示模组。主�
   - ES8389 立体声编解码器、两路 NS4150B 功放、两路模拟麦克风，以及左右喇叭接口。
   - RS485（SIT3088E，硬件自动方向）和 CAN（SIT1050T + 片内 TWAI），出在 6 针端子上。
   - 2 × 10、2.54 mm 排针 H1，引出 UART0/UART1、I2C、RS485/CAN 相关 GPIO，以及 3.3 V / 5 V / GND。
-  - 四路 ADC 按键、RESET / BOOT、WS2812B RGB 灯、3 kHz 无源蜂鸣器。
+  - 四路 ADC 按键、RESET / BOOT、WS2812B RGB 灯、3 kHz 无源蜂鸣器。默认不贴。
 
 ESP32-S31-WROOM-3 的更多参数见 [相关文档](#5-相关文档) 中的模组数据手册。
 
@@ -105,8 +105,8 @@ ESP32-S31-WROOM-3 的更多参数见 [相关文档](#5-相关文档) 中的模�
 12. **工业端子 CN3（CAN / RS485）：** CAN_H、CAN_L、VCC、GND、485_B、485_A。以 PCB 丝印为准。
 13. **音频：** 喇叭 L / R（CN2 / CN1），2 针 1.25 mm；板载麦克风 MIC1 / MIC2。编解码器 ES8389，功放 NS4150B。
 14. **ADC 按键：** SW3–SW6，接在 GPIO42。
-15. **蜂鸣器：** BEEP_EN = GPIO46，高电平打开，无源，3 kHz。
-16. **DCIN / 5V_SEL：** 外部 5 V 输入，以及 5 V 来源选择跳线。
+15. **蜂鸣器：** BEEP_EN = GPIO46，高电平打开，无源，3 kHz。默认不贴。
+16. **DCIN / 5V_SEL：** 支持USB 5V供电或DCIN 7-24V宽压供电（通过跳线帽选择）。
 
 #### 显示接口
 
@@ -186,7 +186,7 @@ H1 上的 GPIO35/36 和 GPIO53/54 与板载 RS485、CAN 收发器并联。不要
 | --- | --- |
 | CAN_H | CAN 高 |
 | CAN_L | CAN 低 |
-| VCC | 5 V。当作电源使用前先确认跳线和负载 |
+| VCC | 7-24V宽压供电（通过跳线帽选择） |
 | GND | 公共地 |
 | 485_B | RS485 B |
 | 485_A | RS485 A |
@@ -328,7 +328,7 @@ idf.py --preview -p COMx flash monitor
 
 ## 6. 相关文档
 
-- [产品规格书 V1.0（PDF）](datasheet/PLCM-UES31S043H800V480C-U%20V1.0%20SPEC.pdf)
+- [产品规格书 V1.1（PDF）](datasheet/PLCM-UES31S043H800V480C-U%20V1.1%20SPEC.pdf)
 - [产品规格书 V1.0（DOC）](datasheet/PLCM-UES31S043H800V480C-U%20V1.0%20SPEC.doc)
 - [原理图（PDF）](schematic/SCH_UES31S043H800V480C-U_2026-08-17.pdf)
 - [2D 图纸（DWG）](2D_diagram/PLCM-UES31S043H800V480-U.dwg)
