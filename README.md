@@ -34,7 +34,7 @@ PLCM-UES31S043H800V480C-U is a high-performance smart display module designed by
   - ES8389 stereo codec, dual NS4150B speaker amplifiers, dual analog microphones, and L/R speaker connectors.
   - RS485 (SIT3088E, hardware automatic direction) and CAN (SIT1050T + on-chip TWAI) on a 6-pin terminal.
   - 2 × 10 pin 2.54 mm header (H1) bringing out UART0/UART1, I2C, RS485/CAN GPIOs, 3.3 V / 5 V / GND.
-  - Four ADC keys, RESET / BOOT, WS2812B RGB LED, and a 3 kHz passive buzzer.
+  - Four ADC keys, RESET / BOOT, WS2812B RGB LED, and a 3 kHz passive buzzer（Not pasted by default）.
 
 For more information on ESP32-S31-WROOM-3, see the module datasheets under [Related Documents](#5-related-documents).
 
@@ -105,7 +105,7 @@ The product specification lists these application areas:
 12. **Industrial terminal CN3 (CAN / RS485):** CAN_H, CAN_L, VCC, GND, 485_B, 485_A. Follow the PCB silkscreen.
 13. **Audio:** Speaker L / R (CN2 / CN1), 2-pin 1.25 mm, and on-board microphones MIC1 / MIC2, through ES8389 and NS4150B.
 14. **ADC buttons:** SW3–SW6 on GPIO42.
-15. **Buzzer:** BEEP_EN = GPIO46, high = on, 3 kHz passive type.
+15. **Buzzer:** BEEP_EN = GPIO46, high = on, 3 kHz passive type（Not pasted by default）.
 16. **DCIN / 5V_SEL:** external 5 V input and 5 V source-selection jumper.
 
 #### Display Interface
