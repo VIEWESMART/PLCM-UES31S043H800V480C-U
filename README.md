@@ -88,7 +88,7 @@ The product specification lists these application areas:
 
 ### 2.1 Interface Description
 
-![Interface layout](images/Interface_Layout_en.jpg)
+![Interface layout](images/Interface_Layout_en.png)
 
 
 1. **Main control module:** ESP32-S31-WROOM-3. Dual-core RISC-V, up to 320 MHz, 16 MB Flash + 16 MB PSRAM, PCB antenna.
@@ -329,8 +329,7 @@ If `esp32s31` is missing from the target list, the install is not master, or `--
 
 ## 6. Related Documents
 
-- [Product specification V1.0 (PDF)](datasheet/PLCM-UES31S043H800V480C-U%20V1.0%20SPEC.pdf)
-- [Product specification V1.0 (DOC)](datasheet/PLCM-UES31S043H800V480C-U%20V1.0%20SPEC.doc)
+- [Product specification V1.1 (PDF)](datasheet/PLCM-UES31S043H800V480C-U%20V1.1%20SPEC.pdf)
 - [Schematic (PDF)](schematic/SCH_UES31S043H800V480C-U_2026-08-17.pdf)
 - [2D drawing (DWG)](2D_diagram/PLCM-UES31S043H800V480-U.dwg)
 - [Display specification UE043WV-RB40-A070A V1.0 (PDF)](datasheet/display/UE043WV-RB40-A070A_V1.0.pdf)
