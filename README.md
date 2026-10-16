@@ -10,7 +10,7 @@
 
 ## 1. Introduction
 
-PLCM-UES31S043H800V480C-U is a high-performance smart display module designed by VIEWE. It is based on the Espressif ESP32-S31-WROOM-3 module and a 4.3-inch RGB capacitive touch panel (800 × 480). The LCD and touch devices are the same as those used on UEDX80480043E-WB-B (ST7262 driver IC and GT911 CTP). The main board is a new design around ESP32-S31: a dual-core 32-bit RISC-V MCU running at up to 320 MHz, with Wi-Fi 6, Bluetooth 5.4 (LE) plus Bluetooth Classic, USB 2.0 High-Speed OTG, stereo audio, SDIO 3.0 storage, and RS485 / CAN industrial interfaces.
+PLCM-UES31S043H800V480C-U is a high-performance smart display module designed by VIEWE. It is based on the Espressif ESP32-S31-WROOM-3 module and a 4.3-inch RGB capacitive touch panel (800 × 480). The LCD and touch devices are the same as those used on UEDX80480043E-WB-B (ST7262 driver IC and GT911 CTP). The main board is a new design around ESP32-S31: a dual-core 32-bit RISC-V MCU running at up to 320 MHz, with Wi-Fi 6, Bluetooth 5.4 (LE) plus Bluetooth Classic, USB 2.0 High-Speed OTG, stereo audio, SDIO 3.0 storage, and RS485 / CAN industrial interfaces.Supports USB 5V power supply or DCIN 7-24V wide voltage power supply (selected via jumper cap).
 
 > [!NOTE]
 > ESP32-S31 is a preview device. ESP-IDF builds must use the `--preview` option (for example `idf.py --preview set-target esp32s31`). Module ratings follow the Espressif ESP32-S31-WROOM-3 datasheet (pre-release). The example guides in this repository say stable releases such as 5.4 or 5.5 do not include this chip, and that ESP-IDF **master** is required.
@@ -56,7 +56,7 @@ For more information on ESP32-S31-WROOM-3, see the module datasheets under [Rela
 - MCU module rating: −40 ~ 85 °C
 - Power voltage: 5.0 V typical
 - Operating current (VCC = +5 V): 320 mA typical / 500 mA maximum at maximum backlight; 100 mA typical with backlight off
-- Recommended power supply: 5 V 1 A DC
+- Recommended power supply: Supports USB 5V power supply or DCIN 7-24V wide voltage power supply (selected via jumper cap).
 
 ### 1.2 Applications
 
@@ -88,7 +88,7 @@ The product specification lists these application areas:
 
 ### 2.1 Interface Description
 
-![Interface layout](images/Interface_Layout_en.jpg)
+![Interface layout](images/Interface_Layout_en.png)
 
 
 1. **Main control module:** ESP32-S31-WROOM-3. Dual-core RISC-V, up to 320 MHz, 16 MB Flash + 16 MB PSRAM, PCB antenna.
@@ -106,7 +106,7 @@ The product specification lists these application areas:
 13. **Audio:** Speaker L / R (CN2 / CN1), 2-pin 1.25 mm, and on-board microphones MIC1 / MIC2, through ES8389 and NS4150B.
 14. **ADC buttons:** SW3–SW6 on GPIO42.
 15. **Buzzer:** BEEP_EN = GPIO46, high = on, 3 kHz passive type（Not pasted by default）.
-16. **DCIN / 5V_SEL:** external 5 V input and 5 V source-selection jumper.
+16. **DCIN / 5V_SEL:** Supports USB 5V power supply or DCIN 7-24V wide voltage power supply (selected via jumper cap).
 
 #### Display Interface
 
@@ -186,7 +186,7 @@ GPIO35/36 and GPIO53/54 on H1 are in parallel with the on-board RS485 and CAN tr
 | --- | --- |
 | CAN_H | CAN high |
 | CAN_L | CAN low |
-| VCC | 5 V. Check the jumper and the load before using it as a supply |
+| VCC | Supports USB 5V power supply or DCIN 7-24V wide voltage power supply (selected via jumper cap) |
 | GND | Common ground |
 | 485_B | RS485 B |
 | 485_A | RS485 A |
@@ -329,8 +329,7 @@ If `esp32s31` is missing from the target list, the install is not master, or `--
 
 ## 6. Related Documents
 
-- [Product specification V1.0 (PDF)](datasheet/PLCM-UES31S043H800V480C-U%20V1.0%20SPEC.pdf)
-- [Product specification V1.0 (DOC)](datasheet/PLCM-UES31S043H800V480C-U%20V1.0%20SPEC.doc)
+- [Product specification V1.1 (PDF)](datasheet/PLCM-UES31S043H800V480C-U%20V1.1%20SPEC.pdf)
 - [Schematic (PDF)](schematic/SCH_UES31S043H800V480C-U_2026-08-17.pdf)
 - [2D drawing (DWG)](2D_diagram/PLCM-UES31S043H800V480-U.dwg)
 - [Display specification UE043WV-RB40-A070A V1.0 (PDF)](datasheet/display/UE043WV-RB40-A070A_V1.0.pdf)
