@@ -1,7 +1,7 @@
 dependencies:
   idf:
     version: ">=5.5.0"
-  viewesmart/bsp_ues31s043h800v480c_u: "^1.0.0"
+  viewesmart/bsp_ues31s043h800v480c_u: "*"
   espressif/gmf_core:
     version: "~1.0"
   espressif/gmf_io:
