@@ -45,9 +45,12 @@ idf.py --preview -p COMx flash monitor
 | `17_bt_audio` | 经典蓝牙音乐 / 通话 | [中文](17_bt_audio/README_CN.md) / [EN](17_bt_audio/README.md) |
 | `18_lvgl` | LVGL 控件 + 触摸 | [中文](18_lvgl/README_CN.md) / [EN](18_lvgl/README.md) |
 
-烧录 `09_wifi_sta` 之前，先改 `main/main.c` 里的 `EXAMPLE_WIFI_SSID` 和 `EXAMPLE_WIFI_PASSWORD`，改成你自己的 2.4 GHz 路由器。源码里原来的账号不是给你用的。
-
-`17_bt_audio` 烧录前要设置下面这行，并且不要执行 `idf.py bmgr`：
+>[!NOTE]
+>在使用`15_mp4_player`时要主要可能会有闪屏的情况，这是由于带宽争（全帧解码 + 显示争总线）抢问题造成需要你将屏幕的PLCK降低来优化改善，最好的方式是使用AVI来代替。
+>
+>烧录 `09_wifi_sta` 之前，先改 `main/main.c` 里的 `EXAMPLE_WIFI_SSID` 和 `EXAMPLE_WIFI_PASSWORD`，改成你自己的 2.4 GHz 路由器。源码里原来的账号不是给你用的。
+>
+>`17_bt_audio` 烧录前要设置下面这行，并且不要执行 `idf.py bmgr`：
 
 ```powershell
 $env:SDKCONFIG_DEFAULTS = "sdkconfig.defaults;sdkconfig.defaults.esp32s31.classic"
