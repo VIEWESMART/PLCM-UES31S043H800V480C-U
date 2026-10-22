@@ -45,9 +45,12 @@ Flash succeeded when the log shows **100%**, **Hash of data verified**, **Hard r
 | `17_bt_audio` | Classic A2DP / HFP + LVGL | [EN](17_bt_audio/README.md) / [中文](17_bt_audio/README_CN.md) |
 | `18_lvgl` | LVGL widgets + touch | [EN](18_lvgl/README.md) / [中文](18_lvgl/README_CN.md) |
 
-Before flashing `09_wifi_sta`, edit `EXAMPLE_WIFI_SSID` and `EXAMPLE_WIFI_PASSWORD` in `main/main.c` to your own 2.4 GHz access point.
-
-`17_bt_audio` needs this set before `idf.py`, and must not use `idf.py bmgr`:
+>[!NOTE]
+> When using `15_mp4_player`, screen flickering may occur. This is caused by bandwidth contention (full-frame decoding + display bus contention). You need to reduce the PLCK of the screen for optimization and improvement. The best approach is to use AVI instead.
+>
+> Before flashing `09_wifi_sta`, edit `EXAMPLE_WIFI_SSID` and `EXAMPLE_WIFI_PASSWORD` in `main/main.c` to your own 2.4 GHz access point.
+>
+> `17_bt_audio` needs this set before `idf.py`, and must not use `idf.py bmgr`:
 
 ```powershell
 $env:SDKCONFIG_DEFAULTS = "sdkconfig.defaults;sdkconfig.defaults.esp32s31.classic"
